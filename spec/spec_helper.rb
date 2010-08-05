@@ -36,11 +36,7 @@ Spec::Runner.configure do |config|
     end.to_app
   end
 
-
-	def do_post(params)
-		post '/direct_router',{}, {'RAW_POST_DATA' => params.to_json }
-	end
-
+  def do_post(params)
+    post '/direct_router',{}, {'RAW_POST_DATA' => params.to_json }
+  end
 end
-
-

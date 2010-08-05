@@ -12,6 +12,7 @@ describe "ActiveDirect::Router" do
     do_post(params)
     Category.count.should == 1
   end
+
   # TODO
   it "should handle form post"
   # TODO 

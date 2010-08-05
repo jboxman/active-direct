@@ -11,7 +11,7 @@ module ActiveDirect
       if env["PATH_INFO"].match("^#{@router_path}")
         @post_data = get_post_data
         result = process_rpc
-        [200, { "Content-Type" => "text/plain"}, [result]]
+        [200, { "Content-Type" => "application/json"}, [result]]
       else
         @app.call(@env)
       end

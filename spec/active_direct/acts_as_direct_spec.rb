@@ -20,7 +20,7 @@ describe "ActiveDirect::ActsAsDirect" do
 	def call_rpc_method_for_category(method, params)
 		post_params = {:action => 'Category', :method => method, :data => params, :type => 'rpc', :tid => 1 }
 		do_post post_params
-		ActiveSupport::JSON.decode(last_response.body)
+		ActiveSupport::JSON.decode(last_response.body).pop
 	end
 
   it "should respond to 'acts_as_direct'" do
@@ -115,7 +115,7 @@ describe "ActiveDirect::ActsAsDirect" do
 	it "should have a default direct method : count" do
 		params = [  ]
 		call_rpc_method_for_category('count', params)
-		json_resp = ActiveSupport::JSON.decode(last_response.body)
+		json_resp = ActiveSupport::JSON.decode(last_response.body).first
 		json_resp['result'].should == Category.count()
   end
 

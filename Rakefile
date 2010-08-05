@@ -10,7 +10,7 @@ desc 'Run the specs'
 Spec::Rake::SpecTask.new(:spec) do |t|
   t.spec_opts = ['--colour --format progress --loadby mtime --reverse']
   t.spec_files = FileList['spec/*/*_spec.rb']
-	t.rcov = true
+	t.rcov = false
 end
 
 

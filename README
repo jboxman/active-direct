@@ -54,8 +54,7 @@ Examples ( After config correctly, you can write the following code in Javascrip
   App.models.Category.delete( 2 )
   App.models.Category.delete_all( “ name LIKE  ‘%java%’  “  )
 
-
-To Do : 
+To Do :
   Add more tests.
 
 Stone Gao (stones.gao at gmail.com), released under the MIT license
