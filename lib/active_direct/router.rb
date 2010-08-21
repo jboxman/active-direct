@@ -97,7 +97,10 @@ module ActiveDirect
     end
 
     def get_form_post_data
-      form_post_data = @env['rack.request'].params
+      # For Rack >= 1.1.0 (Use Rack::Request.new(env) directly instead?)
+      form_post_data = @env.has_key?('rack.request.form_hash') ?
+        @env['rack.request.form_hash'] :
+        @env['rack.request'].params
       with_indifferent_access_for_hash(form_post_data)
     end
 
