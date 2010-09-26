@@ -77,7 +77,7 @@ module ActiveDirect
 				params = params.map {|p| Hash === p ? p.symbolize_keys : p }
         return params
       else
-        normalized_params = params[model.downcase]
+        normalized_params = params[model.underscore]
         normalized_params.each do |k, v|
           if v.is_a?(Hash) && v.include?('tempfile') && v['tempfile'].is_a?(Tempfile)
             normalized_params[k] = v['tempfile']
