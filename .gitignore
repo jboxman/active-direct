@@ -2,4 +2,4 @@ nbproject/*
 coverage/*
 spec/db/*.sqlite3
 spec/*.log
-
+pkg/*
